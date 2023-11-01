@@ -49,6 +49,6 @@ console.log(getFilesToBackup(lastBackup, changes));
 // de los archivos 1 y 3.
 
 // Recuerda que:
-// •Devuelve la id de los archivos que han sido modificados después del último backup.
-// •Devuelve un array vacío si no hay archivos que hacer backup.
-// •Recuerda que deben estar ordenados los id de forma ascendente.
+// • Devuelve la id de los archivos que han sido modificados después del último backup.
+// • Devuelve un array vacío si no hay archivos que hacer backup.
+// • Recuerda que deben estar ordenados los id de forma ascendente.

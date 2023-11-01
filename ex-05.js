@@ -46,7 +46,7 @@ console.log(getMaxGifts([12, 3, 11, 5, 7], 20, 3));
 // getMaxGifts([50, 70, 30], 100, 4) // 100
 
 // A tener en cuenta:
-// maxGifts >= 1
-// giftsCities.length >= 1
-// maxCities >= 1
-// El número de maxCities puede ser mayor a giftsCities.length
+// • maxGifts >= 1
+// • giftsCities.length >= 1
+// • maxCities >= 1
+// • El número de maxCities puede ser mayor a giftsCities.length

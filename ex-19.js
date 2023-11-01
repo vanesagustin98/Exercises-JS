@@ -1,5 +1,19 @@
 function sortToys(toys, positions) {
-    return []
+    for (let index = 0; index < positions.length; index++) {
+        for (let i = 0; i < positions.length-1; i++) {
+            let auxPosition = 0
+            let auxToys = ''
+            if (positions[i]>positions[i+1]) {
+                auxPosition = positions[i]
+                auxToys = toys[i]
+                positions[i] = positions[i+1]
+                toys[i] = toys[i+1]
+                positions[i+1] = auxPosition
+                toys[i+1] = auxToys
+            }
+        }
+    }
+    return toys
 }
 
 const toys = ['ball', 'doll', 'car', 'puzzle']

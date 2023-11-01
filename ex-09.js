@@ -50,7 +50,8 @@ console.log(countTime([0, 0, 0, 1]));
 // 14s: [0, 0, 1, 1, 1]
 // 21s: [1, 0, 1, 1, 1]
 // 28s: [1, 1, 1, 1, 1]
+
 // A tener en cuenta
-// El array siempre tendrá al menos un led encendido.
-// El array puede tener cualquier longitud.
-// Si todos los leds están encendidos, el tiempo es 0.
+// • El array siempre tendrá al menos un led encendido.
+// • El array puede tener cualquier longitud.
+// • Si todos los leds están encendidos, el tiempo es 0.

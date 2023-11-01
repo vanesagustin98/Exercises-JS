@@ -48,7 +48,7 @@ console.log(selectSleigh(distance, sleighs));
 // Rudolph y Midu no pueden recorrer la distancia con 20W.
 
 // Recuerda que:
-// •La batería siempre es de 20W.
-// •La lista de trineos está ordenada de peor a mejor trineo.
-// •Tienes que devolver el nombre del mejor trineo que nos permita cubrir la distancia con los vatios que tenemos disponibles.
-// •Si ningún trineo es usable para la distancia, devuelve null.
+// • La batería siempre es de 20W.
+// • La lista de trineos está ordenada de peor a mejor trineo.
+// • Tienes que devolver el nombre del mejor trineo que nos permita cubrir la distancia con los vatios que tenemos disponibles.
+// • Si ningún trineo es usable para la distancia, devuelve null.

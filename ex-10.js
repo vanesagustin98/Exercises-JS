@@ -45,5 +45,5 @@ console.log(checkJump(heights));
 // Necesitamos que el programa devuelva un boolean que indique si el trineo hace una parabola o no.
 
 // A tener en cuenta
-// •Para que el salto sea válido tiene que subir una vez y bajar una vez. Si durante el salto se queda en la misma altura entre dos posiciones, la parabola continua.
-// •No hace falta que el punto de inicio y final sean el mismo (las ciudades pueden estar a diferentes alturas).
+// • Para que el salto sea válido tiene que subir una vez y bajar una vez. Si durante el salto se queda en la misma altura entre dos posiciones, la parabola continua.
+// • No hace falta que el punto de inicio y final sean el mismo (las ciudades pueden estar a diferentes alturas).

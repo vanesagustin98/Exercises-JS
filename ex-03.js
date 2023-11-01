@@ -20,7 +20,7 @@ console.log(distributeGifts(packOfGifts, reindeers));
 // por lo tanto, Santa Claus puede entregar 2 cajas de regalos
 
 // distributeGifts(packOfGifts, reindeers) // 2
-// Cosas a tener en cuenta:
 
-// Las cajas de regalos no se pueden dividir.
-// Los nombres de los regalos y los renos siempre serán mayores que 0.
+// Cosas a tener en cuenta:
+// • Las cajas de regalos no se pueden dividir.
+// • Los nombres de los regalos y los renos siempre serán mayores que 0.
