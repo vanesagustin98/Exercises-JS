@@ -1,21 +1,34 @@
 function howManyReindeers(reindeerTypes, gifts) {
-    let reindeers = [];
-    let sum = 0;
-    for (let i = 0; i < gifts.length; i++) {
-        let country = gifts[i].country;
-        let weight = gifts[i].weight;
-        for (let j = 0; j < reindeerTypes.length; j++) {
-            // if (reindeerTypes[i].weightCapacity < weight) {
-            console.log(weight-1);
-            let  num = Math.floor((weight-1) / reindeerTypes[j].weightCapacity);
-            weight = weight - (num * reindeerTypes[j].weightCapacity);
-            console.log(num);
-            sum += num;
-            // }
+  const getReindeers = (weight) => {
+    const allowedReindeersTypes = reindeerTypes.filter(
+      reindeerType => reindeerType.weightCapacity < weight
+    )
+
+    let totalWeightCapacity = allowedReindeersTypes.reduce(
+      (acc, reindeerType) => acc + reindeerType.weightCapacity, 0)
+
+    return allowedReindeersTypes.map(reindeerType => {
+        const num = Math.floor(weight / totalWeightCapacity)
+        weight -= num * reindeerType.weightCapacity
+        totalWeightCapacity -= reindeerType.weightCapacity
+
+        return {
+          type: reindeerType.type,
+          num,
         }
-    }
-    return reindeers
+      })
+      // .filter(reindeerType => reindeerType.num > 0)
+  }
+
+  reindeerTypes.sort((a, b) => b.weightCapacity - a.weightCapacity)
+
+  return gifts.map(gift => ({
+    country: gift.country,
+    reindeers: getReindeers(gift.weight),
+  }))
 }
+
+
 
 const reindeerTypes = [
     { type: 'Nuclear', weightCapacity: 50 },
