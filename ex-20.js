@@ -17,7 +17,6 @@ function howManyReindeers(reindeerTypes, gifts) {
           num,
         }
       })
-      // .filter(reindeerType => reindeerType.num > 0)
   }
 
   reindeerTypes.sort((a, b) => b.weightCapacity - a.weightCapacity)
