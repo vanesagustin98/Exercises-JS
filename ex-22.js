@@ -45,3 +45,25 @@ console.log(checkStepNumbers(systemNames, stepNumbers));
 // Ten en cuenta que:
 // • La posición del nombre del sistema en systemNames y el número de paso en stepNumbers corresponden al mismo sistema.
 // • Los pasos en stepNumbers pueden repetirse para diferentes sistemas.
+
+// SOLUCION ALTERNATIVA (mejor puntaje pero no la hice yo)
+
+// function checkStepNumbers(systemNames, stepNumbers) {
+//     const systemSteps = {};
+
+//     for (let i = 0; i < systemNames.length; i++) {
+//         const systemName = systemNames[i];
+//         const currentStep = stepNumbers[i];
+
+//         if (!(systemName in systemSteps)) {
+//             systemSteps[systemName] = currentStep;
+//         } else {
+//             if (currentStep <= systemSteps[systemName]) {
+//                 return false;
+//             }
+//             systemSteps[systemName] = currentStep;
+//         }
+//     }
+
+//     return true;
+// }
