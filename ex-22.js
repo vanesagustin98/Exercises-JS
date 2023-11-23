@@ -1,6 +1,22 @@
 function checkStepNumbers(systemNames, stepNumbers) {
+    for (let i = 0; i < systemNames.length; i++) {
+        let arrAux = []
+        for (let j = 0; j < systemNames.length; j++) {
+            if (systemNames[i]===systemNames[j]) {
+                arrAux.push(stepNumbers[j])
+                if (arrAux[i]>=arrAux[i+1]) {
+                    return false
+                }
+            }
+        }
+    }
     return true
 }
+
+const systemNames = ["tree_1", "tree_2", "house", "tree_1", "tree_2", "house"]
+const stepNumbers = [1, 33, 10, 2, 44, 20]
+
+console.log(checkStepNumbers(systemNames, stepNumbers));
 
 // Verifica que todas las secuencias independientes de sistemas de iluminación navideña estén en orden estrictamente creciente. Tenemos dos arrays: systemNames y stepNumbers.
 // systemNames contiene los nombres de los sistemas de iluminación navideña, y stepNumbers contiene los números de paso de cada sistema.
