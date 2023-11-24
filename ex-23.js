@@ -1,6 +1,65 @@
 function executeCommands(commands) {
-    return []
+
+    let registers = {
+        'V00': 0,
+        'V01': 0,
+        'V02': 0,
+        'V03': 0,
+        'V04': 0,
+        'V05': 0,
+        'V06': 0,
+        'V07': 0,
+    }
+    let mov = (p1, p2) => {
+        registers[p2] = p1;
+    }
+
+    let add = (p1, p2) => {
+        registers[p1] = (registers[p1] + registers[p2]) % 256;
+    }
+
+    let dec = (p1) => {
+        registers[p1] = (registers[p1] - 1 + 256) % 256;
+    }
+
+    let inc = (p1) => {
+        registers[p1] = (registers[p1] + 1) % 256;
+    }
+
+    for (let i = 0; i < commands.length; i++) {
+        const [command, ...operands] = commands[i].split(/[\s,]+/);
+        if (commands[i].startsWith('MOV V')) {
+            mov(registers[operands[0]], operands[1]);
+        } else if (commands[i].startsWith('MOV')) {
+            mov(Number(operands[0]), operands[1]);
+        }
+        if (command == 'ADD') {
+            add(operands[0], operands[1]);
+        }
+        if (command == 'DEC') {
+            dec(operands[0]);
+        }
+        if (command == 'INC') {
+            inc(operands[0]);
+        }
+        if (command == 'JMP' && registers.V00 !=0) {
+            i = operands[0]-1
+        }
+    }
+
+    return Object.values(registers);
 }
+
+
+console.log(executeCommands(['DEC V00']));
+console.log(executeCommands([
+    'MOV 10,V00',
+    'DEC V00',
+    'INC V01',
+    'JMP 1',
+    'INC V06'
+])); // Output: [0, 10, 0, 0, 0, 0, 1, 0]
+
 
 console.log(executeCommands([
     'MOV 5,V00',
